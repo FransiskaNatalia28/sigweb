@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bilangan Fibonacci</title>
+    <script>
+        function generateFibonacci() {
+            var number = parseInt(document.getElementById("number").value);
+            var result = document.getElementById("result");
+            result.innerHTML = ""; // Reset hasil sebelumnya
+            
+            if (isNaN(number) || number < 1) {
+                alert("Masukkan angka yang valid!");
+                return;
+            }
+            
+            var fibonacci = [1, 1];
+            while (true) {
+                var nextFib = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
+                if (nextFib > number) break;
+                fibonacci.push(nextFib);
+            }
+            
+            result.innerHTML = "Bilangan Fibonacci dari 1 sampai " + number + ": " + fibonacci.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h2>Bilangan Fibonacci</h2>
+    <p>Masukkan sebuah angka:</p>
+    <input type="number" id="number"><br><br>
+    <button onclick="generateFibonacci()">Cek Bilangan Fibonacci</button>
+    <p id="result"></p>
+</body>
+</html>

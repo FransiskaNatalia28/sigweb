@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+
+        body {
+            border: 10px solid blue;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: blue;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            min-height: 500px;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #f0f0f0;
+            padding: 30px;
+            font-size: 1.5em;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            color: blue;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            font-size: 1.5em;
+        }
+
+        .content-text {
+            flex: 1;
+            line-height: 1.8;
+        }
+
+        .content-text p {
+            margin-bottom: 25px;
+        }
+
+        .content img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">City Gallery</div>
+
+    <div class="container">
+        <div class="sidebar">
+            <a href="#">London</a>
+            <a href="#">Paris</a>
+            <a href="#">Tokyo</a>
+        </div>
+
+        <div class="content">
+            <div class="content-text">
+                <h2><b>London</b></h2>
+                <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+            </div>
+            <img src="https://wisatamuda.com/wp-content/uploads/2018/07/4.-Tempat-Wisata-Terbaik-di-London-Inggris-Big-Ben-1024x682.jpg" alt="Big Ben London">
+        </div>
+    </div>
+
+    <div class="footer">Copyright @ (fransiskanatalia)</div>
+</body>
+</html>

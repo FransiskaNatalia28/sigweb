@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fransiska Natalia Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://i.pinimg.com/736x/20/4c/9b/204c9b1aa56c67d23bc247a401c10530.jpg') no-repeat center center/cover;
+        }
+        .landing-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .icon i {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+            color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <h1 class="title">Fransiska Natalia Landing Page</h1>
+        <div class="icon-container">
+            <a href="tugas.html" class="icon">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Tugas</span>
+            </a>
+            <a href="index.html" class="icon">
+                <i class="fas fa-user"></i>
+                <span>CV</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

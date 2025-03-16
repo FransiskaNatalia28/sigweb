@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Hitung Faktorial</h1>
+
+    <form id="formFaktorial">
+        <label for="inputAngka">Masukkan angka:</label>
+        <input type="number" id="inputAngka" required>
+        <button type="submit">Hitung</button>
+    </form>
+
+    <p id="tulis"></p>
+
+    <script>
+        function factorial(n) {
+            return (n === 0 || n === 1) ? 1 : n * factorial(n - 1);
+        }
+
+        document.getElementById("formFaktorial").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let angka = parseInt(document.getElementById("inputAngka").value);
+            document.getElementById("tulis").innerHTML = 
+                isNaN(angka) || angka < 0 ? 'Masukkan angka positif!' : 
+                `Faktorial dari ${angka} adalah ${factorial(angka)}`;
+        });
+    </script>
+</body>
+</html>

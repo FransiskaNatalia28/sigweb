@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Bilangan Prima</title>
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function generatePrimes() {
+            var number = parseInt(document.getElementById("number").value);
+            var result = document.getElementById("result");
+            result.innerHTML = ""; // Reset hasil sebelumnya
+            
+            if (isNaN(number) || number < 1) {
+                alert("Masukkan angka yang valid!");
+                return;
+            }
+            
+            var primes = [];
+            for (var i = 1; i <= number; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+            
+            result.innerHTML = "Bilangan prima dari 1 sampai " + number + ": " + primes.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h2>Bilangan Prima</h2>
+    <p>Masukkan sebuah angka:</p>
+    <input type="number" id="number"><br><br>
+    <button onclick="generatePrimes()">Cek Bilangan Prima</button>
+    <p id="result"></p>
+</body>
+</html>
