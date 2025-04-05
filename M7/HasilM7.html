@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peta Batas Kecamatan Yogyakarta</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 630px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; font-weight: bold;">
+        Peta Batas Administrasi Kabupaten Gunungkidul
+    </h2>
+    <p style="text-align: center;">Fransiska Natalia Pramesti (22/493315/TK/54034)</p>
+    <div id="map"></div>
+
+    <!-- Script data GeoJSON -->
+    <script src="data.js"></script>
+
+    <!-- Script Peta -->
+    <script>
+        // Inisialisasi peta
+        var map = L.map('map').setView([-7.9655055447054846, 110.59610497113587], 11);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Tambahkan polygon dari geojsonData
+        L.geoJSON(geojsonData, {
+            style: {
+                color: "darkgreen",
+                weight: 2,
+                fillOpacity: 0.4
+            },
+            onEachFeature: function (feature, layer) {
+                if (feature.properties) {
+                    var namaDesa = feature.properties.NAMOBJ || "Desa tidak tersedia";
+                    var namaKec = feature.properties.WADMKC || "Kecamatan tidak tersedia";
+                    var popupContent = "<b>Desa:</b> " + namaDesa + "<br><b>Kecamatan:</b> " + namaKec;
+                    layer.bindPopup(popupContent);
+                }
+            }
+        }).addTo(map);
+    </script>
+</body>
+</html>
